@@ -1,0 +1,36 @@
+schema: workflow/2022.04
+name: first-workflow
+settings:
+  error_notification: true
+triggers:
+- id: dc_Wbu4a0x
+steps:
+- namespace: google_chat
+  runtime: nodejs18.x
+  uses: http-custom-request@1.1.1
+  props:
+    httpRequest:
+      auth:
+        type: none
+        username: ''
+        password: ''
+        token: ''
+      body:
+        contentType: application/json
+        fields:
+        - name: text
+          value: '"{{steps}}"'
+        mode: fields
+        type: fields
+      headers:
+      - name: ''
+        value: ''
+        disabled: true
+      method: POST
+      params:
+      - name: ''
+        value: ''
+        disabled: true
+      url: https://chat.googleapis.com/v1/spaces/AAAAzxQ2rpI/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=VgVZxywYDRBO3LZaUoZ6z802tl3ycD7iSR3h4NiE4tE
+      tab: Body
+
